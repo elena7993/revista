@@ -1,5 +1,5 @@
 const EnterDream = () => {
-  return <div></div>;
+  return <div>Dream</div>;
 };
 
 export default EnterDream;
