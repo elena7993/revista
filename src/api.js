@@ -1,26 +1,18 @@
-// import { OpenAI } from "openai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// const openai = new OpenAI({
-//   apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-//   dangerouslyAllowBrowser: true,
-// });
+// API 키와 모델 설정
+const genAI = new GoogleGenerativeAI("AIzaSyA9ZHdwWrOaxi9SU16sY_MVlsPaFjMjvQQ");
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-// export const getDreamInterpretation = async (dreamText) => {
-//   try {
-//     const response = await openai.chat.completions.create({
-//       model: "gpt-3.5-turbo",
-//       messages: [
-//         {
-//           role: "system",
-//           content: "당신은 한국어로 꿈을 해석하는 전문가입니다.",
-//         },
-//         { role: "user", content: dreamText },
-//       ],
-//     });
-
-//     return response.choices[0].message.content;
-//   } catch (error) {
-//     console.error("API 호출 에러:", error);
-//     throw new Error("꿈 해몽 데이터를 가져오는 데 실패했습니다.");
-//   }
-// };
+// API 호출 함수
+export const generateDreamInterpretation = async (prompt) => {
+  try {
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    return text;
+  } catch (error) {
+    console.error("API 호출 중 오류 발생: ", error);
+    throw new Error("꿈 해석에 실패했습니다.");
+  }
+};
