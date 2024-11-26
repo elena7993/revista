@@ -12,7 +12,7 @@ ${reset}
 }
 
 body{
-  color: #000;
+  color: #fff;
   letter-spacing: -1px;
 }
 

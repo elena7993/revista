@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import { mainStyle } from "../../GlobalStyled";
+import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
   max-width: 372px;
   height: 100vh;
+  min-height: 812px;
   padding: 0 ${mainStyle.Padding_main};
-  background: url("/northernlights_realistic.jpg") center no-repeat / cover;
+  background: url("${process.env.PUBLIC_URL}/northernlights_realistic.jpg")
+    center / cover no-repeat;
+  /* background-color: lightblue; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -32,10 +36,17 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
 `;
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/enterdream");
+  };
+
   return (
     <Wrapper>
       <div className="title">
@@ -44,7 +55,7 @@ const Home = () => {
       </div>
 
       <div>
-        <button>Start Dreaming</button>
+        <button onClick={handleClick}>Start Dreaming</button>
       </div>
     </Wrapper>
   );
