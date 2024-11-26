@@ -23,7 +23,7 @@ const Header = ({ text, BackBtn }) => {
         style={{ cursor: "pointer" }}
         onClick={BackBtn}
       />
-      <h3>Enter Dream</h3>
+      <h3>{text}</h3>
     </HeaderWrap>
   );
 };

@@ -9,8 +9,8 @@ export const generateDreamInterpretation = async (prompt) => {
   try {
     const result = await model.generateContent(prompt);
     const response = await result.response;
-    const text = response.text();
-    return text;
+    const text = await response.text();
+    return text.trim();
   } catch (error) {
     console.error("API 호출 중 오류 발생: ", error);
     throw new Error("꿈 해석에 실패했습니다.");

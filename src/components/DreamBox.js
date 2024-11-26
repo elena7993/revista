@@ -16,13 +16,14 @@ const AboutDream = styled.div`
   }
 `;
 
-const DreamBox = ({ value, onChange, placeholder }) => {
+const DreamBox = ({ value, onChange, placeholder, isEditable = true }) => {
   return (
     <AboutDream>
       <textarea
         value={value}
-        onChange={onChange}
+        onChange={isEditable ? onChange : undefined}
         placeholder={placeholder}
+        readOnly={!isEditable}
       ></textarea>
     </AboutDream>
   );

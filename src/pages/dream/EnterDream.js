@@ -128,17 +128,18 @@ const EnterDream = () => {
   // };
 
   const navigate = useNavigate();
+
   const handleClick = () => {
     if (!dream.trim()) {
       alert("Please describe your dream before proceeding.");
       return;
     }
-    navigate("/analysis");
+    navigate("/analysis", { state: { dream } });
   };
 
   return (
     <Wrapper>
-      <Header text="Enter Dream" onBack={() => navigate(-1)} />
+      <Header text="Enter Dream" BackBtn={() => navigate(-1)} />
       <div style={{ marginBottom: "8px" }}>
         <FontAwesomeIcon icon={faCalendar} />
         <span>11/26/2024</span>
@@ -148,6 +149,7 @@ const EnterDream = () => {
         value={dream}
         onChange={(e) => setDream(e.target.value)}
         placeholder="Describe Your Dream..."
+        isEditable={true}
       />
 
       <EmotionBox>
