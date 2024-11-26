@@ -11,45 +11,9 @@ import styled from "styled-components";
 import { mainStyle } from "../../GlobalStyled";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-const Wrap = styled.div`
-  width: 100%;
-  max-width: 372px;
-  height: 100vh;
-  min-height: 812px;
-  padding: 0 ${mainStyle.Padding_main};
-  background-color: #002949;
-  margin: 0 auto;
-`;
-
-const Header = styled.div`
-  width: 100%;
-  padding: 50px ${mainStyle.Padding_main};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  h3 {
-    text-align: center;
-    flex: 1;
-  }
-`;
-
-const AboutDream = styled.div`
-  all: unset;
-  width: 100%;
-  height: 289px;
-  textarea {
-    width: 100%;
-    height: 289px;
-    padding: 15px;
-    border: 2px solid #00b9c6;
-    border-radius: 10px;
-    background-color: rgba(0, 185, 198, 0.18);
-    color: #fff;
-    font-size: 16px;
-    resize: none; /* 크기 조정 막기 */
-  }
-`;
+import Header from "../../components/Header";
+import Wrapper from "../../components/Wrapper";
+import DreamBox from "../../components/DreamBox";
 
 const EmotionBox = styled.div`
   .text {
@@ -165,31 +129,27 @@ const EnterDream = () => {
 
   const navigate = useNavigate();
   const handleClick = () => {
+    if (!dream.trim()) {
+      alert("Please describe your dream before proceeding.");
+      return;
+    }
     navigate("/analysis");
   };
 
   return (
-    <Wrap>
-      <Header>
-        <FontAwesomeIcon
-          icon={faAngleLeft}
-          style={{ cursor: "pointer" }}
-          onClick={() => navigate(-1)}
-        />
-        <h3>Enter Dream</h3>
-      </Header>
+    <Wrapper>
+      <Header text="Enter Dream" onBack={() => navigate(-1)} />
       <div style={{ marginBottom: "8px" }}>
         <FontAwesomeIcon icon={faCalendar} />
         <span>11/26/2024</span>
       </div>
 
-      <AboutDream>
-        <textarea
-          value={dream}
-          onChange={handleChange}
-          placeholder="Describe Your Dream..."
-        ></textarea>
-      </AboutDream>
+      <DreamBox
+        value={dream}
+        onChange={(e) => setDream(e.target.value)}
+        placeholder="Describe Your Dream..."
+      />
+
       <EmotionBox>
         {emotionData.map((emotion) => (
           <div className={emotion.type} key={emotion.type}>
@@ -202,15 +162,6 @@ const EnterDream = () => {
                 <div
                   key={index}
                   onClick={() => handleEmotionClick(emotion.type, option.value)}
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                    fontSize: "24px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    cursor: "pointer",
-                  }}
                 >
                   {option.emoji}
                 </div>
@@ -221,7 +172,7 @@ const EnterDream = () => {
       </EmotionBox>
 
       <AnalysisBtn onClick={handleClick}>Analysis</AnalysisBtn>
-    </Wrap>
+    </Wrapper>
   );
 };
 
