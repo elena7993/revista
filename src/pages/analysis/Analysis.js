@@ -31,8 +31,12 @@ const Analysis = () => {
         const positiveMatch = result.match(/긍정적인 감정.*?(\d+)%/);
         const negativeMatch = result.match(/부정적인 감정:*?(\d+)%/);
 
-        const positiveValue = positiveMatch ? parseInt(positiveMatch[1]) : 0;
-        const negativeValue = negativeMatch ? parseInt(negativeMatch[1]) : 0;
+        const positiveValue = positiveMatch
+          ? parseInt(positiveMatch[1], 10)
+          : 0;
+        const negativeValue = negativeMatch
+          ? parseInt(negativeMatch[1], 10)
+          : 0;
 
         setPositive(positiveValue);
         setNegative(negativeValue);
