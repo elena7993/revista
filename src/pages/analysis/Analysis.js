@@ -25,11 +25,11 @@ const Analysis = () => {
       isFetchingRef.current = true;
 
       try {
-        const prompt = `꿈 해석: ${dream} (결과는 한국어로 해석하고  긍정적인 감정과 부정적인 감정을 각각 퍼센트로 반환해주세요.)`;
+        const prompt = `꿈 해석: ${dream} (결과는 한국어로 해석하고 긍정적인 감정과 부정적인 감정을 각각 퍼센트로 반환해주세요.)`;
         const result = await generateDreamInterpretation(prompt);
 
-        const positiveMatch = result.match(/긍정적인 감정.*?(\d+)%/);
-        const negativeMatch = result.match(/부정적인 감정:*?(\d+)%/);
+        const positiveMatch = result.match(/긍정적인 감정:\s*(\d+)%/);
+        const negativeMatch = result.match(/부정적인 감정:\s*(\d+)%/);
 
         const positiveValue = positiveMatch
           ? parseInt(positiveMatch[1], 10)
@@ -37,6 +37,13 @@ const Analysis = () => {
         const negativeValue = negativeMatch
           ? parseInt(negativeMatch[1], 10)
           : 0;
+
+        console.log(
+          "Positive Value:",
+          positiveValue,
+          "Negative Value:",
+          negativeValue
+        );
 
         setPositive(positiveValue);
         setNegative(negativeValue);

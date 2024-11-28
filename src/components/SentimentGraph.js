@@ -6,9 +6,9 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const SentimentGraph = ({ positive, negative }) => {
   console.log("Positive:", positive, "Negative:", negative);
 
-  const total = positive + negative;
-  const adjustedPositive = total ? (positive / total) * 100 : 0;
-  const adjustedNegative = total ? (negative / total) * 100 : 0;
+  const total = Math.max(positive + negative, 1);
+  const adjustedPositive = (positive / total) * 100;
+  const adjustedNegative = (negative / total) * 100;
 
   const data = {
     labels: ["Positive", "Negative"],
@@ -20,9 +20,6 @@ const SentimentGraph = ({ positive, negative }) => {
       },
     ],
   };
-
-  console.log("Adjusted Positive:", adjustedPositive);
-  console.log("Adjusted Positive:", adjustedNegative);
 
   const options = {
     plugins: {
@@ -49,12 +46,13 @@ const SentimentGraph = ({ positive, negative }) => {
       <div
         style={{
           textAlign: "center",
-          marginTop: "-50px",
-          fontSize: "18px",
+          fontSize: "30px",
           fontWeight: "bold",
+          marginTop: "-140px",
         }}
       >
-        {positive}% Positive
+        {positive}% <br />
+        Positive
       </div>
     </div>
   );
