@@ -40,15 +40,18 @@ const Wrapper = styled.div`
     all: unset;
     width: 170px;
     height: 50px;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 55px;
+    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
-    font-weight: 500;
+    font-weight: 700;
     font-style: normal;
+    margin-bottom: 150px;
     cursor: pointer;
   }
 `;

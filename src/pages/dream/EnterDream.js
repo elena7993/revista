@@ -8,7 +8,7 @@ import {
 // import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Wrapper from "../../components/Wrapper";
@@ -109,6 +109,18 @@ const EnterDream = () => {
     clarity: null,
     lucid: null,
   });
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const today = new Date();
+    const formatDate = today.toLocaleDateString("ko-KR", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+    setCurrentDate(formatDate);
+  }, []);
 
   const handleEmotionClick = (type, value) => {
     setEmotions((prev) => ({
@@ -118,12 +130,8 @@ const EnterDream = () => {
     console.log(`${type} selected:`, value);
   };
 
-  const handleChange = (e) => {
-    setDream(e.target.value);
-  };
-
-  // const handleEmojiClick = (value) => {
-  //   setSelectedEmoji(value);
+  // const handleChange = (e) => {
+  //   setDream(e.target.value);
   // };
 
   const navigate = useNavigate();
@@ -140,8 +148,11 @@ const EnterDream = () => {
     <Wrapper>
       <Header text="Enter Dream" BackBtn={() => navigate(-1)} />
       <div style={{ marginBottom: "8px" }}>
-        <FontAwesomeIcon icon={faCalendar} />
-        <span>11/26/2024</span>
+        <FontAwesomeIcon
+          icon={faCalendar}
+          style={{ color: "#F6DF80", marginRight: "3px" }}
+        />
+        <span>{currentDate}</span>
       </div>
 
       <DreamBox
@@ -155,7 +166,10 @@ const EnterDream = () => {
         {emotionData.map((emotion) => (
           <div className={emotion.type} key={emotion.type}>
             <div className="text">
-              <FontAwesomeIcon icon={emotion.icon} />
+              <FontAwesomeIcon
+                icon={emotion.icon}
+                style={{ color: "#F6DF80", marginRight: "3px" }}
+              />
               <span>{emotion.label}</span>
             </div>
             <div className="emoji">
@@ -163,6 +177,25 @@ const EnterDream = () => {
                 <div
                   key={index}
                   onClick={() => handleEmotionClick(emotion.type, option.value)}
+                  style={{
+                    width: "28px",
+                    height: "28px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor:
+                      emotions[emotion.type] === option.value
+                        ? "#00b9c6"
+                        : "rgba(0, 185, 198, 0.18)",
+                    color:
+                      emotions[emotion.type] === option.value ? "#fff" : "#000",
+                    borderRadius: "10px",
+                    transform:
+                      emotions[emotion.type] === option.value
+                        ? "scale(1.1)"
+                        : "scale(1)",
+                    transition: "all 0.3s",
+                  }}
                 >
                   {option.emoji}
                 </div>

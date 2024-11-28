@@ -5,7 +5,7 @@ import { mainStyle } from "../GlobalStyled";
 
 const HeaderWrap = styled.div`
   width: 100%;
-  padding: 50px ${mainStyle.Padding_main};
+  padding: 50px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;

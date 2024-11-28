@@ -63,10 +63,10 @@ const Analysis = () => {
   return (
     <Wrapper>
       <Header text="Analysis" BackBtn={() => navigate(-1)} />
-      <div style={{ marginBottom: "15px" }}>Meaning</div>
+      <div style={{ marginBottom: "15px", fontWeight: "600" }}>Meaning</div>
       <DreamBox value={analysis} isEditable={false} />
 
-      <div style={{ marginTop: "30px" }}>Sentiment</div>
+      <div style={{ marginTop: "30px", fontWeight: "600" }}>Sentiment</div>
       <SentimentGraph positive={positive} negative={negative} />
     </Wrapper>
   );
