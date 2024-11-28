@@ -25,7 +25,7 @@ const Analysis = () => {
       isFetchingRef.current = true;
 
       try {
-        const prompt = `꿈 해석: ${dream} (결과는 한국어로 해석하고 긍정적인 감정과 부정적인 감정을 각각 퍼센트로 반환해주세요.)`;
+        const prompt = `꿈 해석: ${dream} (결과는 한국어로 해석하고 긍정적인 감정과 부정적인 감정을 각각 퍼센트로 반환해주세요. 이 때 예를들어 긍정적인 감정: 60%, 부정적인 감정: 40% 이런식으로 나타내주세요`;
         const result = await generateDreamInterpretation(prompt);
 
         const positiveMatch = result.match(/긍정적인 감정:\s*(\d+)%/);
@@ -63,7 +63,7 @@ const Analysis = () => {
   return (
     <Wrapper>
       <Header text="Analysis" BackBtn={() => navigate(-1)} />
-      <div style={{ marginBottom: "10px" }}>Meaning</div>
+      <div style={{ marginBottom: "15px" }}>Meaning</div>
       <DreamBox value={analysis} isEditable={false} />
 
       <div style={{ marginTop: "30px" }}>Sentiment</div>

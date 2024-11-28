@@ -22,20 +22,33 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     h2 {
-      font-size: 42px;
+      font-size: 48px;
+      font-family: "Pacifico", cursive;
+      font-weight: 400;
+      font-style: normal;
     }
     p {
-      font-size: 18px;
+      font-size: 26px;
+      font-family: "Dancing Script", cursive;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      margin-top: 20px;
     }
   }
   button {
     all: unset;
-    width: 150px;
+    width: 170px;
     height: 50px;
-    border: 1px solid #000;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 30px;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     cursor: pointer;
   }
 `;

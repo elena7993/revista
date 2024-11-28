@@ -8,7 +8,10 @@ const StyledTextarea = styled.textarea`
   border-radius: 10px;
   background-color: rgba(0, 185, 198, 0.18);
   color: #fff;
-  font-size: 16px;
+  font-size: 22px;
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   resize: none;
 `;
 

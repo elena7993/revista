@@ -5,10 +5,9 @@ import {
   faLightbulb,
   faMoon,
 } from "@fortawesome/free-regular-svg-icons";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+// import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { mainStyle } from "../../GlobalStyled";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
