@@ -5,7 +5,6 @@ import {
   faLightbulb,
   faMoon,
 } from "@fortawesome/free-regular-svg-icons";
-// import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
@@ -22,7 +21,6 @@ const EmotionBox = styled.div`
   .emoji {
     width: 130px;
     height: 30px;
-    background-color: rgba(0, 185, 198, 0.18);
     font-size: 20px;
     display: flex;
     justify-content: space-around;
@@ -150,7 +148,7 @@ const EnterDream = () => {
       <div style={{ marginBottom: "8px" }}>
         <FontAwesomeIcon
           icon={faCalendar}
-          style={{ color: "#F6DF80", marginRight: "3px" }}
+          style={{ color: "#F6DF80", width: "15px", marginRight: "5px" }}
         />
         <span>{currentDate}</span>
       </div>
@@ -168,7 +166,12 @@ const EnterDream = () => {
             <div className="text">
               <FontAwesomeIcon
                 icon={emotion.icon}
-                style={{ color: "#F6DF80", marginRight: "3px" }}
+                style={{
+                  color: "#F6DF80",
+                  fontSize: "18px",
+                  width: "15px",
+                  marginRight: "5px",
+                }}
               />
               <span>{emotion.label}</span>
             </div>

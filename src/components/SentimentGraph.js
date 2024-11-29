@@ -33,8 +33,8 @@ const SentimentGraph = ({ positive, negative }) => {
   return (
     <div
       style={{
-        width: "300px",
-        height: "150px",
+        width: "270px",
+        height: "270px",
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
@@ -51,6 +51,7 @@ const SentimentGraph = ({ positive, negative }) => {
           marginTop: "-140px",
           display: "flex",
           flexDirection: "column",
+          paddingBottom: "120px",
         }}
       >
         {positive}%<span style={{ fontSize: "20px" }}>Positive</span>
