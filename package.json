@@ -36,7 +36,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https:https://elena7993.github.io/revista/#/",
+  "homepage": "https://elena7993.github.io/revista/#/",
   "eslintConfig": {
     "extends": [
       "react-app",
