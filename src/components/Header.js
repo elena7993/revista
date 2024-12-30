@@ -1,11 +1,10 @@
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { mainStyle } from "../GlobalStyled";
 
 const HeaderWrap = styled.div`
   width: 100%;
-  padding: 50px 0;
+  padding: 0 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;

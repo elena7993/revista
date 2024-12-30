@@ -54,7 +54,7 @@ const AnalysisBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 50px;
   cursor: pointer;
 `;
 
@@ -128,10 +128,6 @@ const EnterDream = () => {
     console.log(`${type} selected:`, value);
   };
 
-  // const handleChange = (e) => {
-  //   setDream(e.target.value);
-  // };
-
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -150,7 +146,9 @@ const EnterDream = () => {
           icon={faCalendar}
           style={{ color: "#F6DF80", width: "15px", marginRight: "5px" }}
         />
-        <span>{currentDate}</span>
+        <span style={{ fontFamily: "'Dongle', sans-serif", fontSize: "22px" }}>
+          {currentDate}
+        </span>
       </div>
 
       <DreamBox

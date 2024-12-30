@@ -5,6 +5,22 @@ import Wrapper from "../../components/Wrapper";
 import { useEffect, useRef, useState } from "react";
 import { generateDreamInterpretation } from "../../api";
 import SentimentGraph from "../../components/SentimentGraph";
+import styled from "styled-components";
+
+const Button = styled.button`
+  all: unset;
+  width: 100%;
+  height: 57px;
+  background-color: #00b9c6;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -1;
+  cursor: pointer;
+`;
 
 const Analysis = () => {
   const navigate = useNavigate();
@@ -68,6 +84,7 @@ const Analysis = () => {
 
       <div style={{ marginTop: "30px", fontWeight: "600" }}>Sentiment</div>
       <SentimentGraph positive={positive} negative={negative} />
+      <Button>Retry</Button>
     </Wrapper>
   );
 };

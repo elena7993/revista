@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { mainStyle } from "../../GlobalStyled";
 import { useNavigate } from "react-router-dom";
 
-const Wrapper = styled.div`
+const Wrap = styled.div`
   width: 100%;
-  max-width: 372px;
+  max-width: 380px;
   height: 100vh;
-  min-height: 812px;
+  min-height: 100vh;
   padding: 0 ${mainStyle.Padding_main};
   background: url("${process.env.PUBLIC_URL}/northernlights_realistic.jpg")
     center / cover no-repeat;
@@ -17,10 +17,12 @@ const Wrapper = styled.div`
   align-items: center;
   border: 1px solid #dbdbdb;
   margin: 0 auto;
+  position: relative;
   .title {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 40px;
     h2 {
       font-size: 48px;
       font-family: "Pacifico", cursive;
@@ -36,6 +38,29 @@ const Wrapper = styled.div`
       margin-top: 20px;
     }
   }
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.7;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  }
+
+  .star {
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    filter: blur(0.8px);
+    animation: twinkle 2s infinite ease-in-out;
+  }
+
   button {
     all: unset;
     width: 170px;
@@ -51,7 +76,7 @@ const Wrapper = styled.div`
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    margin-bottom: 150px;
+    margin-top: 90px;
     cursor: pointer;
   }
 `;
@@ -64,16 +89,33 @@ const Home = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrap>
       <div className="title">
         <h2>Revista</h2>
         <p>Here, your dream becomes a story</p>
       </div>
-
       <div>
         <button onClick={handleClick}>Start Dreaming</button>
       </div>
-    </Wrapper>
+      <div className="stars">
+        <div
+          className="star"
+          style={{ position: "absolute", top: "10%", left: "30%" }}
+        ></div>
+        <div
+          className="star"
+          style={{ position: "absolute", top: "42%", left: "50%" }}
+        ></div>
+        <div
+          className="star"
+          style={{ position: "absolute", top: "50%", right: "10%" }}
+        ></div>
+        <div
+          className="star"
+          style={{ position: "absolute", top: "60%", left: "20%" }}
+        ></div>
+      </div>
+    </Wrap>
   );
 };
 
