@@ -132,7 +132,7 @@ const EnterDream = () => {
 
   const handleClick = () => {
     if (!dream.trim()) {
-      alert("Please describe your dream before proceeding.");
+      alert("Please describe your dream before proceeding!");
       return;
     }
     navigate("/analysis", { state: { dream } });

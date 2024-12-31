@@ -9,7 +9,7 @@ import styled from "styled-components";
 
 const Button = styled.button`
   all: unset;
-  width: 100%;
+  width: 344px;
   height: 57px;
   background-color: #00b9c6;
   border-radius: 15px;
@@ -19,6 +19,9 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   letter-spacing: -1;
+  position: absolute;
+  bottom: 30px;
+  left: 18px;
   cursor: pointer;
 `;
 
@@ -77,14 +80,14 @@ const Analysis = () => {
   }, [dream]);
 
   return (
-    <Wrapper>
+    <Wrapper style={{ position: "relative" }}>
       <Header text="Analysis" BackBtn={() => navigate(-1)} />
       <div style={{ marginBottom: "15px", fontWeight: "600" }}>Meaning</div>
       <DreamBox value={analysis} isEditable={false} />
 
       <div style={{ marginTop: "30px", fontWeight: "600" }}>Sentiment</div>
       <SentimentGraph positive={positive} negative={negative} />
-      <Button>Retry</Button>
+      <Button onClick={() => navigate("/enterdream")}>Retry</Button>
     </Wrapper>
   );
 };
