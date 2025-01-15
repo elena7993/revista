@@ -6,12 +6,18 @@
 
 북픽 바로가기: <https://elena7993.github.io/revista/>
 
-### 1.목적
+### 1. 앱 이미지
+
+<img src="./public/revista_images/revista_home.png" alt="홈화면" width="300" height="500">
+<img src="./public/revista_images/revista_enter.png" alt="메인화면" width="300" height="500">
+<img src="./public/revista_images/revista_analysis.png" alt="프로필화면" width="300" height="500">
+
+### 2. 목적
 
 - 사용자가 꿈을 기록하고, 꿈의 테마와 감정을 분석하여 자기 이해를 돕는다.
-- 꿈의 키워드를 기반으로 해몽과 테마를 제공하여 꿈의 의미를 해석한다.
+- 꿈의 키워드를 기반으로 해몽과 테마를 제공하여 꿈의 의미를 자세히 해석한다.
 
-### 2.기능
+### 3. 기능
 
 1. 꿈 기록:
    사용자가 꿈의 내용을 입력하거나 키워드로 정리.
@@ -20,7 +26,7 @@
 2. 꿈 분석: -입력된 꿈을 키워드로 분석해 테마와 감정을 그래프로 시각화.
    -AI 기반 해몽 기능 제공
 
-### 3. 스택
+### 4. 스택
 
 - HTML, CSS, JavaScript, React, Google Gemini Api
 
