@@ -22,7 +22,7 @@
 
 ### 3. 스택
 
-- HTML, CSS, JS, React, Node.js, LocalStorage, Chart.js, Google Gemini Api
+- HTML, CSS, JavaScript, React, Google Gemini Api
 
 ### 5. 개발 스케줄
 
