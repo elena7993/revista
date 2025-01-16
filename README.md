@@ -8,9 +8,9 @@
 
 ### 1. 앱 이미지
 
-<img src="./public/revista_images/revista_home.png" alt="홈화면" width="300" height="500">
-<img src="./public/revista_images/revista_enter.png" alt="꿈기록화면" width="300" height="500">
-<img src="./public/revista_images/revista_analysis.png" alt="꿈분석화면" width="300" height="500">
+<img src="./public/revista_images/Revista_home.png" alt="홈화면" width="300" height="500">
+<img src="./public/revista_images/Revista_enter.png" alt="꿈기록화면" width="300" height="500">
+<img src="./public/revista_images/Revista_analysis.png" alt="꿈분석화면" width="300" height="500">
 
 ### 2. 목적
 
