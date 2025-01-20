@@ -28,7 +28,7 @@
 
 ### 4. 스택
 
-- HTML, CSS, JavaScript, React, Google Gemini Api
+- HTML, CSS, JavaScript, React, Google Gemini Api, Figma
 
 ### 5. 개발 스케줄
 
