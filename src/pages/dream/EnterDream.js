@@ -29,17 +29,14 @@ const EmotionBox = styled.div`
   }
 
   .sleep,
-  .mood {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-  }
-
+  .mood,
   .clarity,
   .lucid {
+    width: 380px;
+    height: 30px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 `;
 

@@ -19,9 +19,6 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   letter-spacing: -1;
-  position: absolute;
-  bottom: 30px;
-  left: 18px;
   cursor: pointer;
 `;
 
@@ -80,7 +77,7 @@ const Analysis = () => {
   }, [dream]);
 
   return (
-    <Wrapper style={{ position: "relative" }}>
+    <Wrapper>
       <Header text="Analysis" BackBtn={() => navigate(-1)} />
       <div style={{ marginBottom: "15px", fontWeight: "600" }}>Meaning</div>
       <DreamBox value={analysis} isEditable={false} />

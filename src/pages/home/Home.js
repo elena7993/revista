@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const Wrap = styled.div`
   width: 100%;
-  max-width: 380px;
-  height: 100vh;
+  max-width: 440px;
+  height: 100%;
   min-height: 100vh;
   padding: 0 ${mainStyle.Padding_main};
   background: url("${process.env.PUBLIC_URL}/northernlights_realistic.jpg")
@@ -76,7 +76,7 @@ const Wrap = styled.div`
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    margin-top: 90px;
+    margin-top: 100px;
     cursor: pointer;
   }
 `;
